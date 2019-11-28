@@ -1,0 +1,15 @@
+raspberry_pi_mounting_plate_portrait_assembly:
+Vitamins:
+  4 3MM threaded rivet insert
+  1 Micro SD card
+  1 Raspberry Pi 3
+  2 Screw M3 cap x 12mm
+  1 Screw M3 cap x 16mm
+  6 Screw M3 cap x 8mm
+
+Printed:
+  1 raspberry_pi_mounting_plate.stl
+
+Assemblies:
+  1 back_spin_plate_assembly
+  1 din_rail_clip_assembly

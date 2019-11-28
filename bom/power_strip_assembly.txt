@@ -1,0 +1,4 @@
+power_strip_assembly:
+Vitamins:
+  2  3M Dual lock velcro 85mm long
+  1  Super Danny 6 outlet Power Strip

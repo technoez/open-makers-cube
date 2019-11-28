@@ -1,0 +1,6 @@
+back_spin_plate_assemblies:
+Vitamins:
+  8 3MM threaded rivet insert
+
+Printed:
+  4 back_spin_plate.stl

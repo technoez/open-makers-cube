@@ -1,0 +1,14 @@
+small_breadboard_portrait_assembly:
+Vitamins:
+  1 Small Breadboard
+  2 Screw M3 cap x 12mm
+  1 Screw M3 cap x 16mm
+  1 Screw M3 cap x 5mm
+  2 Screw M3 cap x 8mm
+
+Printed:
+  1 small_breadboard_holder.stl
+
+Assemblies:
+  1 back_spin_plate_assembly
+  1 din_rail_clip_assembly

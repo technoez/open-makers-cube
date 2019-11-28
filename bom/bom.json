@@ -1,0 +1,276 @@
+[
+    {
+        "count": 1, 
+        "name": "prop_assembly", 
+        "assemblies": {}, 
+        "routed": {}, 
+        "printed": {
+            "prop.stl": 1
+        }, 
+        "vitamins": {
+            " :  3M Dual lock velcro 6mm long": 2, 
+            " : 1 inch sq rubber foot": 2
+        }
+    }, 
+    {
+        "count": 1, 
+        "name": "power_strip_assembly", 
+        "assemblies": {}, 
+        "routed": {}, 
+        "printed": {}, 
+        "vitamins": {
+            " :  3M Dual lock velcro 85mm long": 2, 
+            " :  Super Danny 6 outlet Power Strip": 1
+        }
+    }, 
+    {
+        "count": 1, 
+        "name": "tray_assembly", 
+        "assemblies": {}, 
+        "routed": {}, 
+        "printed": {}, 
+        "vitamins": {
+            "screw(M3_cap_screw, 12): Screw M3 cap x 12mm": 2, 
+            "washer(M3_washer): Washer  M3 x 7mm x 0.5mm": 2
+        }
+    }, 
+    {
+        "count": 4, 
+        "name": "corner_lamp_holder_assembly", 
+        "assemblies": {}, 
+        "routed": {}, 
+        "printed": {}, 
+        "vitamins": {
+            "screw(M3_cap_screw, 12): Screw M3 cap x 12mm": 12, 
+            "screw(M3_cap_screw, 8): Screw M3 cap x 8mm": 4
+        }
+    }, 
+    {
+        "count": 4, 
+        "name": "din_rail_clip_assembly", 
+        "assemblies": {}, 
+        "routed": {}, 
+        "printed": {
+            "din_rail_clip.stl": 4
+        }, 
+        "vitamins": {
+            " : 3MM threaded rivet insert": 8
+        }
+    }, 
+    {
+        "count": 4, 
+        "name": "back_spin_plate_assembly", 
+        "assemblies": {}, 
+        "routed": {}, 
+        "printed": {
+            "back_spin_plate.stl": 4
+        }, 
+        "vitamins": {
+            " : 3MM threaded rivet insert": 8
+        }
+    }, 
+    {
+        "count": 1, 
+        "name": "raspberry_pi_mounting_plate_portrait_assembly", 
+        "assemblies": {
+            "din_rail_clip_assembly": 1, 
+            "back_spin_plate_assembly": 1
+        }, 
+        "routed": {}, 
+        "printed": {
+            "raspberry_pi_mounting_plate.stl": 1
+        }, 
+        "vitamins": {
+            "screw(M3_cap_screw, 16): Screw M3 cap x 16mm": 1, 
+            ": Micro SD card": 1, 
+            " : 3MM threaded rivet insert": 4, 
+            "pcb(RPI3): Raspberry Pi 3": 1, 
+            "screw(M3_cap_screw, 12): Screw M3 cap x 12mm": 2, 
+            "screw(M3_cap_screw, 8): Screw M3 cap x 8mm": 6
+        }
+    }, 
+    {
+        "count": 1, 
+        "name": "arduino_uno_mounting_plate_portrait_assembly", 
+        "assemblies": {
+            "din_rail_clip_assembly": 1, 
+            "back_spin_plate_assembly": 1
+        }, 
+        "routed": {}, 
+        "printed": {
+            "arduino_uno_mounting_plate.stl": 1
+        }, 
+        "vitamins": {
+            "screw(M3_cap_screw, 12): Screw M3 cap x 12mm": 2, 
+            "screw(M3_cap_screw, 16): Screw M3 cap x 16mm": 1, 
+            " : 3MM threaded rivet insert": 4, 
+            "pcb(ArduinoUno3): Arduino Uno R3": 1, 
+            "screw(M3_cap_screw, 8): Screw M3 cap x 8mm": 6
+        }
+    }, 
+    {
+        "count": 1, 
+        "name": "small_breadboard_portrait_assembly", 
+        "assemblies": {
+            "din_rail_clip_assembly": 1, 
+            "back_spin_plate_assembly": 1
+        }, 
+        "routed": {}, 
+        "printed": {
+            "small_breadboard_holder.stl": 1
+        }, 
+        "vitamins": {
+            "screw(M3_cap_screw, 16): Screw M3 cap x 16mm": 1, 
+            "screw(M3_cap_screw, 8): Screw M3 cap x 8mm": 2, 
+            " : Small Breadboard": 1, 
+            "screw(M3_cap_screw, 5): Screw M3 cap x 5mm": 1, 
+            "screw(M3_cap_screw, 12): Screw M3 cap x 12mm": 2
+        }
+    }, 
+    {
+        "count": 1, 
+        "name": "small_breadboard_landscape_assembly", 
+        "assemblies": {
+            "din_rail_clip_assembly": 1, 
+            "back_spin_plate_assembly": 1
+        }, 
+        "routed": {}, 
+        "printed": {
+            "small_breadboard_holder.stl": 1
+        }, 
+        "vitamins": {
+            "screw(M3_cap_screw, 16): Screw M3 cap x 16mm": 1, 
+            "screw(M3_cap_screw, 8): Screw M3 cap x 8mm": 2, 
+            " : Small Breadboard": 1, 
+            "screw(M3_cap_screw, 5): Screw M3 cap x 5mm": 1, 
+            "screw(M3_cap_screw, 12): Screw M3 cap x 12mm": 2
+        }
+    }, 
+    {
+        "count": 1, 
+        "name": "carry_handle_assembly", 
+        "assemblies": {}, 
+        "routed": {}, 
+        "printed": {
+            "carry_handle.stl": 1
+        }, 
+        "vitamins": {
+            "screw(M3_cap_screw, 16): Screw M3 cap x 16mm": 2, 
+            "washer(M3_washer): Washer  M3 x 7mm x 0.5mm": 2
+        }
+    }, 
+    {
+        "count": 1, 
+        "name": "din_rail_assembly", 
+        "assemblies": {}, 
+        "routed": {}, 
+        "printed": {}, 
+        "vitamins": {
+            "screw(M3_cap_screw, 8): Screw M3 cap x 8mm": 14, 
+            " : 35MM Din Rail 200 MM long": 7, 
+            "washer(M3_washer): Washer  M3 x 7mm x 0.5mm": 14
+        }
+    }, 
+    {
+        "count": 4, 
+        "name": "corner_tube_top_assembly", 
+        "assemblies": {}, 
+        "routed": {}, 
+        "printed": {}, 
+        "vitamins": {
+            " : 3MM threaded rivet insert": 4
+        }
+    }, 
+    {
+        "count": 1, 
+        "name": "frame_bottom_assembly", 
+        "assemblies": {}, 
+        "routed": {}, 
+        "printed": {}, 
+        "vitamins": {
+            " : 1IN Aluminum Square Tube 149.2 MM long": 4, 
+            " : 3MM threaded rivet insert": 20
+        }
+    }, 
+    {
+        "count": 1, 
+        "name": "frame_middle_assembly", 
+        "assemblies": {}, 
+        "routed": {}, 
+        "printed": {}, 
+        "vitamins": {
+            " : 1IN Aluminum Square Tube 149.2 MM long": 4, 
+            " : 3MM threaded rivet insert": 40
+        }
+    }, 
+    {
+        "count": 1, 
+        "name": "frame_top_assembly", 
+        "assemblies": {}, 
+        "routed": {}, 
+        "printed": {}, 
+        "vitamins": {
+            " : 1IN Aluminum Square Tube 149.2 MM long": 4, 
+            " : 3MM threaded rivet insert": 40
+        }
+    }, 
+    {
+        "count": 1, 
+        "name": "frame_assembly", 
+        "assemblies": {
+            "frame_bottom_assembly": 1, 
+            "frame_top_assembly": 1, 
+            "frame_middle_assembly": 1, 
+            "corner_tube_top_assembly": 4
+        }, 
+        "routed": {}, 
+        "printed": {
+            "corner_tube_connector_bottom.stl": 4
+        }, 
+        "vitamins": {}
+    }, 
+    {
+        "count": 1, 
+        "name": "helping_hands_assembly", 
+        "assemblies": {}, 
+        "routed": {}, 
+        "printed": {
+            "helping_hands_mount.stl": 1, 
+            "din_rail_clip.stl": 1, 
+            "armature_union.stl": 2
+        }, 
+        "vitamins": {
+            "armature_wire() : 3MM Armature wire - 5 inches long": 2, 
+            "screw(M3_cap_screw, 16): Screw M3 cap x 16mm": 1, 
+            " : Alligator Clip": 2, 
+            "screw(M3_cap_screw, 8): Screw M3 cap x 8mm": 6, 
+            "screw(M3_cap_screw, 12): Screw M3 cap x 12mm": 2
+        }
+    }, 
+    {
+        "count": 1, 
+        "name": "main_assembly", 
+        "assemblies": {
+            "carry_handle_assembly": 1, 
+            "din_rail_assembly": 1, 
+            "raspberry_pi_mounting_plate_portrait_assembly": 1, 
+            "tray_assembly": 1, 
+            "small_breadboard_landscape_assembly": 1, 
+            "arduino_uno_mounting_plate_portrait_assembly": 1, 
+            "corner_lamp_holder_assembly": 4, 
+            "small_breadboard_portrait_assembly": 1, 
+            "prop_assembly": 1, 
+            "frame_assembly": 1, 
+            "helping_hands_assembly": 1, 
+            "power_strip_assembly": 1
+        }, 
+        "routed": {}, 
+        "printed": {}, 
+        "vitamins": {
+            " :  3M Dual lock velcro 6mm long": 2, 
+            " : Magnifier Lamp Assembly": 1, 
+            " :  3M Dual lock velcro 149mm long": 2, 
+            " : 1 inch sq rubber foot": 4
+        }
+    }
+]

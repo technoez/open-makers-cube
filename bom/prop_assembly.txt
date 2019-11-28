@@ -1,0 +1,7 @@
+prop_assembly:
+Vitamins:
+  2  3M Dual lock velcro 6mm long
+  2 1 inch sq rubber foot
+
+Printed:
+  1 prop.stl

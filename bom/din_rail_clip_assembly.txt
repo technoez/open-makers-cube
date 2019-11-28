@@ -1,0 +1,6 @@
+din_rail_clip_assemblies:
+Vitamins:
+  8 3MM threaded rivet insert
+
+Printed:
+  4 din_rail_clip.stl

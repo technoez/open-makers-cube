@@ -1,0 +1,4 @@
+frame_bottom_assembly:
+Vitamins:
+  4 1IN Aluminum Square Tube 149.2 MM long
+ 20 3MM threaded rivet insert

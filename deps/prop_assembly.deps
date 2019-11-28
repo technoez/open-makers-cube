@@ -1,0 +1,26 @@
+tmp.png: \
+	C:/Users/crwilson/Dropbox/openscad/libraries/BOSL/shapes.scad \
+	C:/Users/crwilson/Dropbox/openscad/libraries/dotSCAD/src/__private__/__half_trapezium.scad \
+	C:/Users/crwilson/Dropbox/openscad/libraries/NopSCADlib/utils/core/clip.scad \
+	C:/Users/crwilson/Dropbox/openscad/libraries/NopSCADlib/utils/core/rounded_rectangle.scad \
+	C:/Users/crwilson/Dropbox/openscad/libraries/BOSL/constants.scad \
+	C:/Users/crwilson/Dropbox/openscad/libraries/dotSCAD/src/__private__/__is_float.scad \
+	C:/Users/crwilson/Dropbox/openscad/libraries/BOSL/compat.scad \
+	C:/Users/crwilson/Dropbox/openscad/libraries/dotSCAD/src/__private__/__pie_for_rounding.scad \
+	C:/Users/crwilson/Dropbox/openscad/libraries/BOSL/math.scad \
+	png.scad \
+	C:/Users/crwilson/Dropbox/openscad/libraries/NopSCADlib/utils/core/global.scad \
+	C:/Users/crwilson/Dropbox/openscad/libraries/BOSL/transforms.scad \
+	C:/Users/crwilson/Dropbox/openscad/libraries/dotSCAD/src/__private__/__trapezium.scad \
+	C:/Users/crwilson/Dropbox/openscad/projects/OpenMakersCube/scad/prop_assembly.scad \
+	C:/Users/crwilson/Dropbox/openscad/projects/OpenMakersCube/printed/prop.scad \
+	C:/Users/crwilson/Dropbox/openscad/libraries/NopSCADlib/global_defs.scad \
+	C:/Users/crwilson/Dropbox/openscad/libraries/dotSCAD/src/__private__/__frags.scad \
+	C:/Users/crwilson/Dropbox/openscad/libraries/NopSCADlib/core.scad \
+	C:/Users/crwilson/Dropbox/openscad/libraries/NopSCADlib/utils/core/polyholes.scad \
+	C:/Users/crwilson/Dropbox/openscad/projects/OpenMakersCube/vitamins/rubber_foot.scad \
+	C:/Users/crwilson/Dropbox/openscad/projects/OpenMakersCube/vitamins/dual_lock.scad \
+	C:/Users/crwilson/Dropbox/openscad/libraries/NopSCADlib/utils/core/sphere.scad \
+	C:/Users/crwilson/Dropbox/openscad/libraries/NopSCADlib/utils/core/bom.scad \
+	C:/Users/crwilson/Dropbox/openscad/libraries/dotSCAD/src/rounded_square.scad \
+	C:/Users/crwilson/Dropbox/openscad/libraries/NopSCADlib/utils/core/teardrops.scad

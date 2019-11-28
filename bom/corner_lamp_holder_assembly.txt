@@ -1,0 +1,4 @@
+corner_lamp_holder_assemblies:
+Vitamins:
+ 12 Screw M3 cap x 12mm
+  4 Screw M3 cap x 8mm

@@ -1,0 +1,90 @@
+Vitamins:
+                                              R         
+ A                                            a         
+ r                                            s         
+ d                                            p         
+ u                                            b         
+ i                                            e         
+ n                                            r         
+ o                                            r         
+                                              y         
+ u                                                      
+ n                                            p  S      
+ o                                            i  m  S   
+                                                 a  m   
+ m                                            m  l  a   
+ o                                            o  l  l   
+ u                                            u     l   
+ n                                            n  b      
+ t                                            t  r  b   
+ i        C                                   i  e  r   
+ n        o                                   n  a  e   
+ g        r                                   g  d  a   
+    B     n  C                                   b  d   
+ p  a     e  o                                p  o  b   
+ l  c     r  r     D              H           l  a  o   
+ a  k  C     n     i     F  F     e           a  r  a   
+ t     a  l  e     n     r  r     l     P     t  d  r   
+ e  s  r  a  r           a  a     p     o     e     d   
+    p  r  m        r     m  m  F  i     w        l      
+ p  i  y  p  t  D  a     e  e  r  n     e     p  a  p   
+ o  n        u  i  i           a  g     r     o  n  o   
+ r     h  h  b  n  l     b  m  m              r  d  r   
+ t  p  a  o  e        F  o  i  e  h     s     t  s  t   
+ r  l  n  l     r  c  r  t  d     a  M  t  P  r  c  r  T
+ a  a  d  d  t  a  l  a  t  d  t  n  a  r  r  a  a  a  r
+ i  t  l  e  o  i  i  m  o  l  o  d  i  i  o  i  p  i  a
+ t  e  e  r  p  l  p  e  m  e  p  s  n  p  p  t  e  t  y
+  |  |  |  |  |  |  |  |  |  |  |  | 2|  |  |  |  |  |  |  2  3M Dual lock velcro 149mm long
+  |  |  |  |  |  |  |  |  |  |  |  | 2|  | 2|  |  |  |  |  4  3M Dual lock velcro 6mm long
+  |  |  |  |  |  |  |  |  |  |  |  |  | 2|  |  |  |  |  |  2  3M Dual lock velcro 85mm long
+  |  |  |  |  |  |  |  |  |  |  |  |  | 1|  |  |  |  |  |  1  Super Danny 6 outlet Power Strip
+  |  |  |  |  |  |  |  |  |  |  |  | 4|  | 2|  |  |  |  |  6 1 inch sq rubber foot
+  |  |  |  |  |  |  |  | 4| 4| 4|  |  |  |  |  |  |  |  | 12 1IN Aluminum Square Tube 149.2 MM long
+  |  |  |  |  | 7|  |  |  |  |  |  |  |  |  |  |  |  |  |  7 35MM Din Rail 200 MM long
+ 4| 8|  |  | 4|  | 8|  |20|40|40|  |  |  |  | 4|  |  |  |128 3MM threaded rivet insert
+  |  |  |  |  |  |  |  |  |  |  | 2|  |  |  |  |  |  |  |  2 Alligator Clip
+  |  |  |  |  |  |  |  |  |  |  |  | 1|  |  |  |  |  |  |  1 Magnifier Lamp Assembly
+  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 1| 1|  |  2 Small Breadboard
+  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 1|  |  |  |  1 Micro SD card
+  |  |  |  |  |  |  |  |  |  |  | 2|  |  |  |  |  |  |  |  2 3MM Armature wire - 5 inches long
+ 1|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  1 Arduino Uno R3
+  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 1|  |  |  |  1 Raspberry Pi 3
+ 2|  |  |12|  |  |  |  |  |  |  | 2|  |  |  | 2| 2| 2| 2| 24 Screw M3 cap x 12mm
+ 1|  | 2|  |  |  |  |  |  |  |  | 1|  |  |  | 1| 1| 1|  |  7 Screw M3 cap x 16mm
+  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 1| 1|  |  2 Screw M3 cap x 5mm
+ 6|  |  | 4|  |14|  |  |  |  |  | 6|  |  |  | 6| 2| 2|  | 40 Screw M3 cap x 8mm
+  |  | 2|  |  |14|  |  |  |  |  |  |  |  |  |  |  |  | 2| 18 Washer  M3 x 7mm x 0.5mm
+
+Printed:
+ 1|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  1 arduino_uno_mounting_plate.stl
+  |  |  |  |  |  |  |  |  |  |  | 2|  |  |  |  |  |  |  |  2 armature_union.stl
+  | 4|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  4 back_spin_plate.stl
+  |  | 1|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  1 carry_handle.stl
+  |  |  |  |  |  |  | 4|  |  |  |  |  |  |  |  |  |  |  |  4 corner_tube_connector_bottom.stl
+  |  |  |  |  |  | 4|  |  |  |  | 1|  |  |  |  |  |  |  |  5 din_rail_clip.stl
+  |  |  |  |  |  |  |  |  |  |  | 1|  |  |  |  |  |  |  |  1 helping_hands_mount.stl
+  |  |  |  |  |  |  |  |  |  |  |  |  |  | 1|  |  |  |  |  1 prop.stl
+  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 1|  |  |  |  1 raspberry_pi_mounting_plate.stl
+  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 1| 1|  |  2 small_breadboard_holder.stl
+
+Assemblies:
+  1 arduino_uno_mounting_plate_portrait_assembly
+  4 back_spin_plate_assemblies
+  1 carry_handle_assembly
+  4 corner_lamp_holder_assemblies
+  4 corner_tube_top_assemblies
+  1 din_rail_assembly
+  4 din_rail_clip_assemblies
+  1 frame_assembly
+  1 frame_bottom_assembly
+  1 frame_middle_assembly
+  1 frame_top_assembly
+  1 helping_hands_assembly
+  1 main_assembly
+  1 power_strip_assembly
+  1 prop_assembly
+  1 raspberry_pi_mounting_plate_portrait_assembly
+  1 small_breadboard_landscape_assembly
+  1 small_breadboard_portrait_assembly
+  1 tray_assembly

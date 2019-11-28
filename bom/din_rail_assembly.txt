@@ -1,0 +1,5 @@
+din_rail_assembly:
+Vitamins:
+  7 35MM Din Rail 200 MM long
+ 14 Screw M3 cap x 8mm
+ 14 Washer  M3 x 7mm x 0.5mm

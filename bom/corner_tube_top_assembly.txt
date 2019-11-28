@@ -1,0 +1,3 @@
+corner_tube_top_assemblies:
+Vitamins:
+  4 3MM threaded rivet insert

@@ -1,0 +1,7 @@
+carry_handle_assembly:
+Vitamins:
+  2 Screw M3 cap x 16mm
+  2 Washer  M3 x 7mm x 0.5mm
+
+Printed:
+  1 carry_handle.stl

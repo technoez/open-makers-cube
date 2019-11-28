@@ -1,0 +1,23 @@
+tmp.png: \
+	C:/Users/crwilson/Dropbox/openscad/libraries/NopSCADlib/utils/sweep.scad \
+	C:/Users/crwilson/Dropbox/openscad/libraries/NopSCADlib/utils/rounded_cylinder.scad \
+	C:/Users/crwilson/Dropbox/openscad/libraries/NopSCADlib/utils/core/rounded_rectangle.scad \
+	C:/Users/crwilson/Dropbox/openscad/libraries/NopSCADlib/utils/core/teardrops.scad \
+	C:/Users/crwilson/Dropbox/openscad/libraries/NopSCADlib/utils/core/global.scad \
+	C:/Users/crwilson/Dropbox/openscad/libraries/NopSCADlib/global_defs.scad \
+	png.scad \
+	C:/Users/crwilson/Dropbox/openscad/libraries/NopSCADlib/printed/handle.scad \
+	C:/Users/crwilson/Dropbox/openscad/libraries/NopSCADlib/vitamins/washer.scad \
+	C:/Users/crwilson/Dropbox/openscad/libraries/NopSCADlib/vitamins/inserts.scad \
+	C:/Users/crwilson/Dropbox/openscad/libraries/NopSCADlib/utils/core/polyholes.scad \
+	C:/Users/crwilson/Dropbox/openscad/libraries/NopSCADlib/core.scad \
+	C:/Users/crwilson/Dropbox/openscad/libraries/NopSCADlib/vitamins/washers.scad \
+	C:/Users/crwilson/Dropbox/openscad/libraries/NopSCADlib/vitamins/nut.scad \
+	C:/Users/crwilson/Dropbox/openscad/libraries/NopSCADlib/vitamins/nuts.scad \
+	C:/Users/crwilson/Dropbox/openscad/libraries/NopSCADlib/utils/core/clip.scad \
+	C:/Users/crwilson/Dropbox/openscad/libraries/NopSCADlib/vitamins/screw.scad \
+	C:/Users/crwilson/Dropbox/openscad/libraries/NopSCADlib/vitamins/screws.scad \
+	C:/Users/crwilson/Dropbox/openscad/libraries/NopSCADlib/vitamins/insert.scad \
+	C:/Users/crwilson/Dropbox/openscad/libraries/NopSCADlib/utils/core/sphere.scad \
+	C:/Users/crwilson/Dropbox/openscad/libraries/NopSCADlib/utils/maths.scad \
+	C:/Users/crwilson/Dropbox/openscad/libraries/NopSCADlib/utils/core/bom.scad

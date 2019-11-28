@@ -1,0 +1,14 @@
+{
+    "din_rail_clip.stl": 20.437, 
+    "corner_tube_connector_bottom.stl": 15.948, 
+    "corner_tube_connector_top.stl": 14.465, 
+    "raspberry_pi_mounting_plate.stl": 33.601, 
+    "arduino_uno_mounting_plate.stl": 37.515, 
+    "prop.stl": 21.761, 
+    "corner_tube_connector_typical.stl": 6.873, 
+    "small_breadboard_holder.stl": 43.617, 
+    "armature_union.stl": 18.428, 
+    "helping_hands_mount.stl": 21.791, 
+    "carry_handle.stl": 28.011, 
+    "back_spin_plate.stl": 19.141
+}

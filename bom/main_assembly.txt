@@ -1,0 +1,20 @@
+main_assembly:
+Vitamins:
+  2  3M Dual lock velcro 149mm long
+  2  3M Dual lock velcro 6mm long
+  4 1 inch sq rubber foot
+  1 Magnifier Lamp Assembly
+
+Assemblies:
+  1 arduino_uno_mounting_plate_portrait_assembly
+  1 carry_handle_assembly
+  4 corner_lamp_holder_assemblies
+  1 din_rail_assembly
+  1 frame_assembly
+  1 helping_hands_assembly
+  1 power_strip_assembly
+  1 prop_assembly
+  1 raspberry_pi_mounting_plate_portrait_assembly
+  1 small_breadboard_landscape_assembly
+  1 small_breadboard_portrait_assembly
+  1 tray_assembly

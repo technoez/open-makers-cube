@@ -1,0 +1,9 @@
+frame_assembly:
+Printed:
+  4 corner_tube_connector_bottom.stl
+
+Assemblies:
+  4 corner_tube_top_assemblies
+  1 frame_bottom_assembly
+  1 frame_middle_assembly
+  1 frame_top_assembly

@@ -1,0 +1,35 @@
+tmp.png: \
+	C:/Users/crwilson/Dropbox/openscad/libraries/NopSCADlib/utils/sweep.scad \
+	C:/Users/crwilson/Dropbox/openscad/libraries/NopSCADlib/utils/rounded_cylinder.scad \
+	C:/Users/crwilson/Dropbox/openscad/libraries/NopSCADlib/vitamins/nut.scad \
+	C:/Users/crwilson/Dropbox/openscad/libraries/NopSCADlib/vitamins/nuts.scad \
+	C:/Users/crwilson/Dropbox/openscad/libraries/NopSCADlib/vitamins/washers.scad \
+	C:/Users/crwilson/Dropbox/openscad/libraries/NopSCADlib/vitamins/screws.scad \
+	C:/Users/crwilson/Dropbox/openscad/libraries/dotSCAD/src/__private__/__nearest_multiple_of_4.scad \
+	C:/Users/crwilson/Dropbox/openscad/libraries/dotSCAD/src/rounded_cube.scad \
+	C:/Users/crwilson/Dropbox/openscad/libraries/bosl/transforms.scad \
+	C:/Users/crwilson/Dropbox/openscad/libraries/bosl/shapes.scad \
+	C:/Users/crwilson/Dropbox/openscad/libraries/bosl/constants.scad \
+	C:/Users/crwilson/Dropbox/openscad/libraries/BOSL/constants.scad \
+	C:/Users/crwilson/Dropbox/openscad/libraries/NopSCADlib/vitamins/screw.scad \
+	C:/Users/crwilson/Dropbox/openscad/libraries/NopSCADlib/utils/core/clip.scad \
+	C:/Users/crwilson/Dropbox/openscad/libraries/dotSCAD/src/__private__/__is_float.scad \
+	C:/Users/crwilson/Dropbox/openscad/libraries/BOSL/compat.scad \
+	C:/Users/crwilson/Dropbox/openscad/libraries/BOSL/math.scad \
+	C:/Users/crwilson/Dropbox/openscad/libraries/NopSCADlib/vitamins/washer.scad \
+	C:/Users/crwilson/Dropbox/openscad/libraries/BOSL/transforms.scad \
+	C:/Users/crwilson/Dropbox/openscad/projects/OpenMakersCube/printed/carry_handle.scad \
+	png.scad \
+	C:/Users/crwilson/Dropbox/openscad/libraries/NopSCADlib/utils/core/global.scad \
+	C:/Users/crwilson/Dropbox/openscad/libraries/bosl/compat.scad \
+	C:/Users/crwilson/Dropbox/openscad/libraries/NopSCADlib/utils/core/rounded_rectangle.scad \
+	C:/Users/crwilson/Dropbox/openscad/projects/OpenMakersCube/scad/handle_assembly.scad \
+	C:/Users/crwilson/Dropbox/openscad/libraries/NopSCADlib/utils/core/teardrops.scad \
+	C:/Users/crwilson/Dropbox/openscad/libraries/NopSCADlib/global_defs.scad \
+	C:/Users/crwilson/Dropbox/openscad/libraries/dotSCAD/src/__private__/__frags.scad \
+	C:/Users/crwilson/Dropbox/openscad/libraries/NopSCADlib/core.scad \
+	C:/Users/crwilson/Dropbox/openscad/libraries/NopSCADlib/utils/core/polyholes.scad \
+	C:/Users/crwilson/Dropbox/openscad/libraries/bosl/math.scad \
+	C:/Users/crwilson/Dropbox/openscad/libraries/NopSCADlib/utils/core/sphere.scad \
+	C:/Users/crwilson/Dropbox/openscad/libraries/NopSCADlib/utils/maths.scad \
+	C:/Users/crwilson/Dropbox/openscad/libraries/NopSCADlib/utils/core/bom.scad

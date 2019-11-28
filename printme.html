@@ -1,0 +1,1829 @@
+<p><a name="TOP"></a></p>
+<h1>OpenMakersCube</h1>
+<p><img alt="Picture" src="./assemblies/main_assembled.png" /> <br>
+<strong>Open Maker's Cube</strong> is an open source project developed for making electronics project design and testing more fun and convenient. Due to its versatile design, the Maker's Cube can be used for other hobbies and applications.</p>
+<p>The itch needing scratching is the ratsnest of wires and cables generated when building electronics bread board circuits. I frequently use Raspberry Pis and other microcontrollers/SBCs.  With these devices comes the need for power strips which quickly leads to a maze of entangled power cords.</p>
+<p>Portability of any electronics project can be an issue.  If a project is built on the kitchen table for example, relocating requires a lot of disconnecting and re-routing.  Inevetibly wires came loose from the breadboards, resulting in needless troubleshooting.</p>
+<p>Ergonomically, bending over and wiring breadboard circuits for hours is hard on the back and neck.  Adequate Lighting can also be a concern.</p>
+<p>The Maker's cube is lightweight. Around 3.5 lbs base unit only and is less than 7 lbs fully loaded with hardware(Rpi's/Arduinos, electronic components, plugin power supplies).</p>
+<p>The dimensions are 200mm (8in.) x 200mm (8in.) x 200mm (8in.).  This size is perfect for any desk or table.  Not taking up any more space than a typical laptop.</p>
+<p>The frame is made out of lightweight 1 in. square aluminum tubing. In early designs, 80/20 was used, but added almost 2x the weight.</p>
+<p>M3 Threaded aluminum inserts are inserted into the aluminum frame to hold the components securely. The threaded inserts do require a rivet insertion tool. There are a lot of rivets, so inserting rivets into the frame is the most time consuming process. </p>
+<p>All plastic parts (orange) are printed with PETG. I went with PETG to hopefully withstand the heat better. Especially in the summer months. Obviously, print in any material to fit your needs.</p>
+<p>There are mounting plates to support Raspberry PIs and Arduino UNOs in both landscape and portrait orientations.  Due to the flexibility of the DIN Rail clips, you can design any mounting plate for any device which can easily be attached to the DIN rail clips using two 2 - 3mm securing screws.</p>
+<p>There is a mounting plate which holds a standard 400 pt solderless breadboard in both landscape and portrait orientations.</p>
+<p>Mounted in the center of the Maker's cube is a 6 outlet power strip with 4 - 2.4A USB ports. This allows for mulitple electrical plugins inside the cube keeping the corded 'ratsnest' inside the body of the cube.  The power strip has an extra long 9.8 ft cord.</p>
+<p>By design, only M3 screws are used.  This requires only a simple 2.5mm allen key, which I leave inside the tray.  The DIN rail mounting clips can normally be removed by hand.  However, if there are a lot of mounted components, the only other tool needed is a small flat tipped screwdriver to unlock the clips.</p>
+<p>I use 6 inch plastic wire ties to keep the cables/wires organized inside the Maker's cube body.</p>
+<p>There is a removable stand (prop) which is used to tilt the cube back at a 30 deg angle which allows the user to work at a comfortable eye level.</p>
+<p>The detachable LED magnifier lamp is extremely handy.  It is super bright and having a magnifier lens makes it extremely easy to see the intricate details.</p>
+<p>As an after thought, I designed a crude helping hands assembly.  It uses 3mm aluminum armature wire and conventional alligator clips.  This is helpful if you need to solder or hold components.  Yes, the wire will eventually break with excessive bending back-and-forth, but the wire is cheap and can be easily replaced. </p>
+<p>I use 3M's 'Dual Lock' fastener tape to secure the power supply to the inside bottom frame of the cube.  The allows the power supply to be easily removed if need be.  Also, the front 'prop' stand which tilts the cube at an angle, uses small sections of this tape to secure itself inside the cube's inner frame for transport.</p>
+<p>To be extremely modular and flexible I designed the DIN Rail clips to be generic by nature. There two 3mm threaded inserts for mounting external components. The idea is you can design and mount anything you'd like to the clip.  </p>
+<p>I began the CAD design work in Sketchup. However, since I wanted to release as a open source project, I migrated the CAD design over to <a href="http://openscad.org">OpenScad</a>.  I relied heavlily on these wonderful open source projects:<br />
+1. <a href="https://github.com/nophead/NopSCADlib/blob/master/readme.md">NopSCADlib</a> - nophead, thanks so much for contributing this library! Absolutely amazing and a huge time saver for generating this beautiful documentation.
+2. <a href="https://github.com/revarbat/BOSL/wiki">BOSL</a> 
+3. <a href="http://www.cannymachines.com/entries/9/openscad_dimensioned_drawings">Dimlines - A dimensioning library</a>
+4. <a href="https://github.com/mathcodeprint/openscad-fiddlybits/blob/master/objectarrays.scad">objectarrays</a>
+5. <a href="https://github.com/openscad/MCAD">MCAD</a>
+6. <a href="https://github.com/Obijuan/obiscad">Obiscad</a>
+7. <a href="https://www.thingiverse.com/thing:59817">Textgenerator</a>
+8. <a href="https://github.com/ubitux/shimonbox">Shimonbox</a>
+9. <a href="http://dkprojects.net/openscad-threads/">Openscad-threads</a>
+10. <a href="https://github.com/SebiTimeWaster/Chamfers-for-OpenSCAD">Chamfersfor OpenScad</a>
+11. <a href="https://www.bolts-library.org/en/index.html">BOLTS</a>
+12. <a href="https://www.thingiverse.com/thing:101024">Din Rail Inspiration</a> RobertHunt Thingiverse</p>
+<p>Thank you to the authors of these libraries. I may not have used all them directly in this project, but have gained inspiration from all. 
+I may have used other libraries which I have not given credit. If so, please contact me and I'll update the list. 
+I'm relatively new to OpenScad programming, so my code is not perfect and not always fully parameterized.</p>
+<p>In summary, Maker's Cube goal is to address the following concerns:
+1. <strong>Portability</strong>
+   Contain the electronics project in one location and easy to transport. A fully loaded cube weighs less than 6 lbs.
+2. <strong>Less back strain</strong> 
+   You can comfortably work on your projects in a seated position, eliminating the need to bend over a table/desk for hours.
+3. <strong>Less eye strain</strong>
+   There is a flexible super bright LED lamp mounted to the cube with a 1.5X magnifier glass.
+4. <strong>Modularity</strong>
+   Due to the Clip-on DIN Rail system, components can be easily re-positioned/removed from the cube.
+5. <strong>Project tidyness</strong>
+   A 6 outlet power strip with 4 - 2.4A USB ports is located inside the base of the cube. 
+   This allows for mulitple electrical plugins inside the cube keeping the corded 'ratsnest' inside the body of the cube.</p>
+<h3>Tools Required For Build:</h3>
+<ol>
+<li>3D Printer</li>
+<li><a href="https://www.amazon.com/gp/product/B06XVB3MMG/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&amp;psc=1">Threaded Insert Rivet Gun w/3mm mandrel</a></li>
+<li>2.5mm Allen Key</li>
+<li>Saw to Cut 1 in. aluminum tubing.  Chopsaw, hacksaw, other.</li>
+<li>Knife or razor blades</li>
+<li>5mm drill bit to drill holes for 3mm threaded inserts</li>
+<li>Drill    </li>
+<li>3mm x .5mm hole tap.  To tap 3mm holes in 3D printed plastic.</li>
+</ol>
+<h3>Parts List and Qty Per Build:</h3>
+<ul>
+<li><a href="readme.md#table-of-contents">See Table Of Contents</a></li>
+</ul>
+<h3>Vendor List of Parts (aka vitamins):</h3>
+<ul>
+<li><a href="https://www.amazon.com/gp/product/B07HKK364C/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&amp;psc=1">M3 Threaded Rivet Inserts (bag 100pcs)</a></li>
+<li><a href="https://www.amazon.com/gp/product/B07D2LYFM2/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&amp;psc=1">Velcro - 3M Dual Lock 1in wide 6FT Long</a></li>
+<li><a href="https://www.amazon.com/gp/product/B014VM9ALM/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&amp;psc=1">PETG Filament - Orange 1Kg (1080 FT long)</a></li>
+<li><a href="https://www.amazon.com/gp/product/B077ZSC6RQ/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&amp;psc=1">6 Outlet power strip (SuperDanny)</a></li>
+<li><a href="https://www.amazon.com/gp/product/B01NARN7SM/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&amp;psc=1">Breadboard - Half Size (pack 6 ea)</a></li>
+<li><a href="https://www.amazon.com/gp/product/B01G5WX4M2/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&amp;psc=1">Rubber Bumpers (pack of 20 ea)</a></li>
+<li><a href="https://www.boltdepot.com/Product-Details.aspx?product=6377">Screws - M3 x 5 (pack of 100)</a></li>
+<li><a href="https://www.boltdepot.com/Product-Details.aspx?product=6379">Screws - M3 x 8</a></li>
+<li><a href="https://www.boltdepot.com/Product-Details.aspx?product=6381">Screws - M3 x 12</a></li>
+<li><a href="https://www.boltdepot.com/Product-Details.aspx?product=6382">Screws - M3 x 16</a></li>
+<li><a href="https://www.boltdepot.com/Product-Details.aspx?product=4513">Washers - M3</a></li>
+<li><a href="https://www.amazon.com/gp/product/B019R1BN3U/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&amp;psc=1">Magnifier Lamp</a></li>
+<li><a href="https://www.amazon.com/gp/product/B07CQL7Y5B/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&amp;psc=1">Armature Wire 3MM (32.8 ft copper/alum)</a></li>
+<li><a href="https://www.zoro.com/tygon-tubing-clear-18-in-inside-dia-50-ft-acf00006/i/G4124294/">Tygon Tubing 50FT 1/8" OD (cover alligator clips)</a></li>
+<li><a href="https://www.amazon.com/gp/product/B01D9BO4OO/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&amp;psc=1">Alligator Clips (Package of 50)</a></li>
+<li><a href="https://www.amazon.com/gp/product/B0718T3FMF/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&amp;psc=1">Plastic Ties Blk 6 in (pk 250)</a></li>
+<li><a href="https://www.amazon.com/gp/product/B005SE78Z8/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&amp;psc=1">2.5MM Allen Wrench (pk 100)</a></li>
+<li><a href="https://www.amazon.com/gp/product/B07HMW318D/ref=ppx_yo_dt_b_asin_title_o08_s00?ie=UTF8&amp;psc=1">Din Rails 200MM (20 Pak)</a></li>
+</ul>
+<p><a name="PICS_GALLERY"></a></p>
+<h3>Picture Gallery</h3>
+<ul>
+<li><img alt="" src="./docs/messy_1.jpg" /></li>
+<li><img alt="" src="./docs/makers_cube_table1.jpg" /></li>
+<li><img alt="" src="./docs/makers_cube_table2.jpg" /></li>
+<li><img alt="" src="./docs/makers_cube_table3.jpg" /></li>
+<li><img alt="" src="./docs/makers_cube_table4.jpg" /></li>
+<li><img alt="" src="./docs/makers_cube_table5.jpg" /></li>
+<li><img alt="" src="./docs/makers_cube_table6.jpg" /></li>
+</ul>
+<h3>3D Printing</h3>
+<p>All of the STL models for this project are located in the /stls subdirectory.</p>
+<p>Getting these prints correct was a highly iterative process.  Accuracy is the key to getting these components to fit properly.
+Make sure your printer is calibrated and X/Y print scaling is correct.
+<a name="PRINT_SETTINGS"></a></p>
+<h3>3D Print Settings</h3>
+<p><table>
+<tr><th>STL</th><th>Resolution</th><th>Infill %</th><th>Supports</th><th>Comments</th></tr>
+<tr><td>arduino_uno_mounting_plate.stl</td><td align="center">.3</td><td align="center">20</td><td align="center">NO</td><td>STL file located in <b>/stls</b> directory</td></tr>
+<tr><td>armature_union.stl</td><td align="center">.3</td><td align="center">100</td><td align="center">NO</td><td>STL file located in <b>/stls</b> directory</td></tr>
+<tr><td>back_spin_plate.stl</td><td align="center">.3</td><td align="center">20</td><td align="center">NO</td><td>STL file located in <b>/stls</b> directory</td></tr>
+<tr><td>carry_handle.stl</td><td align="center">.3</td><td align="center">20</td><td align="center">NO</td><td>STL file located in <b>/stls</b> directory</td></tr>
+<tr><td>corner_tube_connector_bottom.stl</td><td align="center">.3</td><td align="center">20</td><td align="center"><b>YES</b></td><td>STL file located in <b>/stls</b> directory</td></tr>
+<tr><td>corner_tube_connector_bottom_v2.stl</td><td align="center">.3</td><td align="center">20</td><td align="center">NO</td><td>Alternate print orientation not requiring supports and stronger. STL file located in <b>/docs</b> directory</td></tr>
+<tr><td>corner_tube_connector_top.stl</td><td align="center">.3</td><td align="center">20</td><td align="center"><b>YES</b></td><td>STL file located in <b>/stls</b> directory</td></tr>
+<tr><td>corner_tube_connector_top_v2.stl</td><td align="center">.3</td><td align="center">20</td><td align="center">NO</td><td>Alternate print orientation not requiring supports and stronger. STL file located in <b>/docs</b> directory</td></tr>
+<tr><td>din_rail_clip.stl</td><td align="center">.3</td><td align="center">100</td><td align="center">NO</td><td>STL file located in <b>/stls</b> directory</td></tr>
+<tr><td>helping_hands_mount.stl</td><td align="center">.3</td><td align="center">20</td><td align="center">NO</td><td>STL file located in <b>/stls</b> directory</td></tr>
+<tr><td>prop.stl</td><td align="center">.3</td><td align="center">20</td><td align="center">NO</td><td>STL file located in <b>/stls</b> directory</td></tr>
+<tr><td>raspberry_pi_mounting_plate.stl</td><td align="center">.3</td><td align="center">20</td><td align="center">NO</td><td>STL file located in <b>/stls</b> directory</td></tr>
+<tr><td>small_breadboard_holder.stl</td><td align="center">.3</td><td align="center">20</td><td align="center">NO</td><td>STL file located in <b>/stls</b> directory</td></tr>
+</table></p>
+<p><img alt="Main Assembly" src="assemblies/main_assembled.png" /></p>
+<div style="page-break-after: always;"></div>
+
+<h2>Table of Contents</h2>
+<ol>
+<li><a href="#Parts_list">Parts list</a></li>
+<li><a href="#prop_assembly">Prop Assembly</a></li>
+<li><a href="#power_strip_assembly">Power Strip Assembly</a></li>
+<li><a href="#tray_assembly">Tray Assembly</a></li>
+<li><a href="#corner_lamp_holder_assembly">Corner Lamp Holder Assembly</a></li>
+<li><a href="#din_rail_clip_assembly">Din Rail Clip Assembly</a></li>
+<li><a href="#back_spin_plate_assembly">Back Spin Plate Assembly</a></li>
+<li><a href="#raspberry_pi_mounting_plate_portrait_assembly">Raspberry Pi Mounting Plate Portrait Assembly</a></li>
+<li><a href="#arduino_uno_mounting_plate_portrait_assembly">Arduino Uno Mounting Plate Portrait Assembly</a></li>
+<li><a href="#small_breadboard_portrait_assembly">Small Breadboard Portrait Assembly</a></li>
+<li><a href="#small_breadboard_landscape_assembly">Small Breadboard Landscape Assembly</a></li>
+<li><a href="#carry_handle_assembly">Carry Handle Assembly</a></li>
+<li><a href="#din_rail_assembly">Din Rail Assembly</a></li>
+<li><a href="#corner_tube_top_assembly">Corner Tube Top Assembly</a></li>
+<li><a href="#frame_bottom_assembly">Frame Bottom Assembly</a></li>
+<li><a href="#frame_middle_assembly">Frame Middle Assembly</a></li>
+<li><a href="#frame_top_assembly">Frame Top Assembly</a></li>
+<li><a href="#frame_assembly">Frame Assembly</a></li>
+<li><a href="#helping_hands_assembly">Helping Hands Assembly</a></li>
+<li><a href="#main_assembly">Main Assembly</a></li>
+</ol>
+<div style="page-break-after: always;"></div>
+
+<p><a name="Parts_list"></a></p>
+<h2>Parts list</h2>
+<table>
+<thead>
+<tr>
+<th align="right"><span style="writing-mode: vertical-rl; text-orientation: mixed;">Prop</span></th>
+<th align="right"><span style="writing-mode: vertical-rl; text-orientation: mixed;">Power&nbsp;Strip</span></th>
+<th align="right"><span style="writing-mode: vertical-rl; text-orientation: mixed;">Tray</span></th>
+<th align="right"><span style="writing-mode: vertical-rl; text-orientation: mixed;">Corner&nbsp;Lamp&nbsp;Holder</span></th>
+<th align="right"><span style="writing-mode: vertical-rl; text-orientation: mixed;">Din&nbsp;Rail&nbsp;Clip</span></th>
+<th align="right"><span style="writing-mode: vertical-rl; text-orientation: mixed;">Back&nbsp;Spin&nbsp;Plate</span></th>
+<th align="right"><span style="writing-mode: vertical-rl; text-orientation: mixed;">Raspberry&nbsp;Pi&nbsp;Mounting&nbsp;Plate&nbsp;Portrait</span></th>
+<th align="right"><span style="writing-mode: vertical-rl; text-orientation: mixed;">Arduino&nbsp;Uno&nbsp;Mounting&nbsp;Plate&nbsp;Portrait</span></th>
+<th align="right"><span style="writing-mode: vertical-rl; text-orientation: mixed;">Small&nbsp;Breadboard&nbsp;Portrait</span></th>
+<th align="right"><span style="writing-mode: vertical-rl; text-orientation: mixed;">Small&nbsp;Breadboard&nbsp;Landscape</span></th>
+<th align="right"><span style="writing-mode: vertical-rl; text-orientation: mixed;">Carry&nbsp;Handle</span></th>
+<th align="right"><span style="writing-mode: vertical-rl; text-orientation: mixed;">Din&nbsp;Rail</span></th>
+<th align="right"><span style="writing-mode: vertical-rl; text-orientation: mixed;">Corner&nbsp;Tube&nbsp;Top</span></th>
+<th align="right"><span style="writing-mode: vertical-rl; text-orientation: mixed;">Frame&nbsp;Bottom</span></th>
+<th align="right"><span style="writing-mode: vertical-rl; text-orientation: mixed;">Frame&nbsp;Middle</span></th>
+<th align="right"><span style="writing-mode: vertical-rl; text-orientation: mixed;">Frame&nbsp;Top</span></th>
+<th align="right"><span style="writing-mode: vertical-rl; text-orientation: mixed;">Frame</span></th>
+<th align="right"><span style="writing-mode: vertical-rl; text-orientation: mixed;">Helping&nbsp;Hands</span></th>
+<th align="right"><span style="writing-mode: vertical-rl; text-orientation: mixed;">Main</span></th>
+<th align="right"><span style="writing-mode: vertical-rl; text-orientation: mixed;">TOTALS</span></th>
+<th align="left"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;2&nbsp;</td>
+<td align="right">&nbsp;&nbsp;2&nbsp;</td>
+<td align="left">&nbsp;&nbsp;  3M Dual lock velcro 149mm long</td>
+</tr>
+<tr>
+<td align="right">&nbsp;&nbsp;2&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;2&nbsp;</td>
+<td align="right">&nbsp;&nbsp;4&nbsp;</td>
+<td align="left">&nbsp;&nbsp;  3M Dual lock velcro 6mm long</td>
+</tr>
+<tr>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;2&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;2&nbsp;</td>
+<td align="left">&nbsp;&nbsp;  3M Dual lock velcro 85mm long</td>
+</tr>
+<tr>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;1&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;1&nbsp;</td>
+<td align="left">&nbsp;&nbsp;  Super Danny 6 outlet Power Strip</td>
+</tr>
+<tr>
+<td align="right">&nbsp;&nbsp;2&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;4&nbsp;</td>
+<td align="right">&nbsp;&nbsp;6&nbsp;</td>
+<td align="left">&nbsp;&nbsp; 1 inch sq rubber foot</td>
+</tr>
+<tr>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;4&nbsp;</td>
+<td align="right">&nbsp;&nbsp;4&nbsp;</td>
+<td align="right">&nbsp;&nbsp;4&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;12&nbsp;</td>
+<td align="left">&nbsp;&nbsp; 1IN Aluminum Square Tube 149.2 MM long</td>
+</tr>
+<tr>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;7&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;7&nbsp;</td>
+<td align="left">&nbsp;&nbsp; 35MM Din Rail 200 MM long</td>
+</tr>
+<tr>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;2&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;2&nbsp;</td>
+<td align="left">&nbsp;&nbsp; 3MM Armature wire - 5 inches long</td>
+</tr>
+<tr>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;8&nbsp;</td>
+<td align="right">&nbsp;&nbsp;8&nbsp;</td>
+<td align="right">&nbsp;&nbsp;4&nbsp;</td>
+<td align="right">&nbsp;&nbsp;4&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;4&nbsp;</td>
+<td align="right">&nbsp;&nbsp;20&nbsp;</td>
+<td align="right">&nbsp;&nbsp;40&nbsp;</td>
+<td align="right">&nbsp;&nbsp;40&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;128&nbsp;</td>
+<td align="left">&nbsp;&nbsp; 3MM threaded rivet insert</td>
+</tr>
+<tr>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;2&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;2&nbsp;</td>
+<td align="left">&nbsp;&nbsp; Alligator Clip</td>
+</tr>
+<tr>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;1&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;1&nbsp;</td>
+<td align="left">&nbsp;&nbsp; Arduino Uno R3</td>
+</tr>
+<tr>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;1&nbsp;</td>
+<td align="right">&nbsp;&nbsp;1&nbsp;</td>
+<td align="left">&nbsp;&nbsp; Magnifier Lamp Assembly</td>
+</tr>
+<tr>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;1&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;1&nbsp;</td>
+<td align="left">&nbsp;&nbsp; Micro SD card</td>
+</tr>
+<tr>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;1&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;1&nbsp;</td>
+<td align="left">&nbsp;&nbsp; Raspberry Pi 3</td>
+</tr>
+<tr>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;2&nbsp;</td>
+<td align="right">&nbsp;&nbsp;12&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;2&nbsp;</td>
+<td align="right">&nbsp;&nbsp;2&nbsp;</td>
+<td align="right">&nbsp;&nbsp;2&nbsp;</td>
+<td align="right">&nbsp;&nbsp;2&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;2&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;24&nbsp;</td>
+<td align="left">&nbsp;&nbsp; Screw M3 cap x 12mm</td>
+</tr>
+<tr>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;1&nbsp;</td>
+<td align="right">&nbsp;&nbsp;1&nbsp;</td>
+<td align="right">&nbsp;&nbsp;1&nbsp;</td>
+<td align="right">&nbsp;&nbsp;1&nbsp;</td>
+<td align="right">&nbsp;&nbsp;2&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;1&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;7&nbsp;</td>
+<td align="left">&nbsp;&nbsp; Screw M3 cap x 16mm</td>
+</tr>
+<tr>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;1&nbsp;</td>
+<td align="right">&nbsp;&nbsp;1&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;2&nbsp;</td>
+<td align="left">&nbsp;&nbsp; Screw M3 cap x 5mm</td>
+</tr>
+<tr>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;4&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;6&nbsp;</td>
+<td align="right">&nbsp;&nbsp;6&nbsp;</td>
+<td align="right">&nbsp;&nbsp;2&nbsp;</td>
+<td align="right">&nbsp;&nbsp;2&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;14&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;6&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;40&nbsp;</td>
+<td align="left">&nbsp;&nbsp; Screw M3 cap x 8mm</td>
+</tr>
+<tr>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;1&nbsp;</td>
+<td align="right">&nbsp;&nbsp;1&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;2&nbsp;</td>
+<td align="left">&nbsp;&nbsp; Small Breadboard</td>
+</tr>
+<tr>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;2&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;2&nbsp;</td>
+<td align="right">&nbsp;&nbsp;14&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;18&nbsp;</td>
+<td align="left">&nbsp;&nbsp; Washer  M3 x 7mm x 0.5mm</td>
+</tr>
+<tr>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="left"><strong>3D Printed parts</strong></td>
+</tr>
+<tr>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;1&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;1&nbsp;</td>
+<td align="left">&nbsp;&nbsp;&nbsp;arduino_uno_mounting_plate.stl</td>
+</tr>
+<tr>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;2&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;2&nbsp;</td>
+<td align="left">&nbsp;&nbsp;&nbsp;armature_union.stl</td>
+</tr>
+<tr>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;4&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;4&nbsp;</td>
+<td align="left">&nbsp;&nbsp;&nbsp;back_spin_plate.stl</td>
+</tr>
+<tr>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;1&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;1&nbsp;</td>
+<td align="left">&nbsp;&nbsp;&nbsp;carry_handle.stl</td>
+</tr>
+<tr>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;4&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;4&nbsp;</td>
+<td align="left">&nbsp;&nbsp;&nbsp;corner_tube_connector_bottom.stl</td>
+</tr>
+<tr>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;4&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;1&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;5&nbsp;</td>
+<td align="left">&nbsp;&nbsp;&nbsp;din_rail_clip.stl</td>
+</tr>
+<tr>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;1&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;1&nbsp;</td>
+<td align="left">&nbsp;&nbsp;&nbsp;helping_hands_mount.stl</td>
+</tr>
+<tr>
+<td align="right">&nbsp;&nbsp;1&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;1&nbsp;</td>
+<td align="left">&nbsp;&nbsp;&nbsp;prop.stl</td>
+</tr>
+<tr>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;1&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;1&nbsp;</td>
+<td align="left">&nbsp;&nbsp;&nbsp;raspberry_pi_mounting_plate.stl</td>
+</tr>
+<tr>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;1&nbsp;</td>
+<td align="right">&nbsp;&nbsp;1&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;.&nbsp;</td>
+<td align="right">&nbsp;&nbsp;2&nbsp;</td>
+<td align="left">&nbsp;&nbsp;&nbsp;small_breadboard_holder.stl</td>
+</tr>
+</tbody>
+</table>
+<div style="page-break-after: always;"></div>
+
+<p><a name="prop_assembly"></a></p>
+<h2>Prop Assembly</h2>
+<h3>Vitamins</h3>
+<table>
+<thead>
+<tr>
+<th align="right">Qty</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right">2</td>
+<td align="left">3M Dual lock velcro 6mm long</td>
+</tr>
+<tr>
+<td align="right">2</td>
+<td align="left">1 inch sq rubber foot</td>
+</tr>
+</tbody>
+</table>
+<h3>3D Printed parts</h3>
+<table>
+<thead>
+<tr>
+<th>1 x prop.stl</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img alt="prop.stl" src="stls/prop.png" /></td>
+</tr>
+</tbody>
+</table>
+<h3>Assembly instructions</h3>
+<p><img alt="prop_assembly" src="assemblies/prop_assembly.png" /></p>
+<ol>
+<li>3D print prop. <a href="#PRINT_SETTINGS">See Print Settings</a></li>
+<li>Using scissors, cut 2 ea 6mm x 1in strip of 3M dual lock velcro.</li>
+<li>Remove adhesive backing from dual lock strips and attach to prop as indicated.</li>
+<li>Remove adhesive backing from the 2 each rubber feet and attach to the bottom of the prop.</li>
+</ol>
+<p><img alt="prop_assembled" src="assemblies/prop_assembled.png" /></p>
+<div style="page-break-after: always;"></div>
+
+<p><a name="power_strip_assembly"></a></p>
+<h2>Power Strip Assembly</h2>
+<h3>Vitamins</h3>
+<table>
+<thead>
+<tr>
+<th align="right">Qty</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right">2</td>
+<td align="left">3M Dual lock velcro 85mm long</td>
+</tr>
+<tr>
+<td align="right">1</td>
+<td align="left">Super Danny 6 outlet Power Strip</td>
+</tr>
+</tbody>
+</table>
+<h3>Assembly instructions</h3>
+<p><img alt="power_strip_assembly" src="assemblies/power_strip_assembly_tn.png" /></p>
+<ol>
+<li>Using scissors, cut 2 each 1in x 85MM dual lock velcro.</li>
+<li>Remove backing from dual lock strips and attach to the bottom of the power strip as indicated.</li>
+</ol>
+<p><img alt="power_strip_assembled" src="assemblies/power_strip_assembled_tn.png" /></p>
+<div style="page-break-after: always;"></div>
+
+<p><a name="tray_assembly"></a></p>
+<h2>Tray Assembly</h2>
+<h3>Vitamins</h3>
+<table>
+<thead>
+<tr>
+<th align="right">Qty</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right">2</td>
+<td align="left">Screw M3 cap x 12mm</td>
+</tr>
+<tr>
+<td align="right">2</td>
+<td align="left">Washer  M3 x 7mm x 0.5mm</td>
+</tr>
+</tbody>
+</table>
+<h3>Assembly instructions</h3>
+<p><img alt="tray_assembly" src="assemblies/tray_assembly_tn.png" /></p>
+<ol>
+<li>Insert 2 ea. M3 x 12MM screws through two M3 flat washers.</li>
+<li>Insert screw/washer assy through the front tray slots.</li>
+<li>Secure tray to top frame assy. </li>
+</ol>
+<p><img alt="tray_assembled" src="assemblies/tray_assembled_tn.png" /></p>
+<div style="page-break-after: always;"></div>
+
+<p><a name="corner_lamp_holder_assembly"></a></p>
+<h2>4 x Corner Lamp Holder Assembly</h2>
+<h3>Vitamins</h3>
+<table>
+<thead>
+<tr>
+<th align="right">Qty</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right">12</td>
+<td align="left">Screw M3 cap x 12mm</td>
+</tr>
+<tr>
+<td align="right">4</td>
+<td align="left">Screw M3 cap x 8mm</td>
+</tr>
+</tbody>
+</table>
+<h3>Assembly instructions</h3>
+<p><img alt="corner_lamp_holder_assembly" src="assemblies/corner_lamp_holder_assembly_tn.png" /></p>
+<ol>
+<li>3D print 4 each lamp holder corner prieces. <a href="#PRINT_SETTINGS">See Print Settings</a></li>
+<li>Using a 3mm x .5mm hole tap, tap the back horizontal hole for the 8mm M3 screw. This screw will be used to secure the lamp in place.</li>
+<li>Screw in 8mm screw a few turns.</li>
+<li>When the frame assembly is assembled, use the remaining 3 12MM M3 screws to secure to frame corners.</li>
+</ol>
+<p><img alt="corner_lamp_holder_assembled" src="assemblies/corner_lamp_holder_assembled_tn.png" /></p>
+<div style="page-break-after: always;"></div>
+
+<p><a name="din_rail_clip_assembly"></a></p>
+<h2>4 x Din Rail Clip Assembly</h2>
+<h3>Vitamins</h3>
+<table>
+<thead>
+<tr>
+<th align="right">Qty</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right">8</td>
+<td align="left">3MM threaded rivet insert</td>
+</tr>
+</tbody>
+</table>
+<h3>3D Printed parts</h3>
+<table>
+<thead>
+<tr>
+<th>4 x din_rail_clip.stl</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img alt="din_rail_clip.stl" src="stls/din_rail_clip.png" /></td>
+</tr>
+</tbody>
+</table>
+<h3>Assembly instructions</h3>
+<p><img alt="din_rail_clip_assembly" src="assemblies/din_rail_clip_assembly_tn.png" /></p>
+<ol>
+<li>3D print 4 each din rail clips. <a href="#PRINT_SETTINGS">See Print Settings</a></li>
+<li>Using a threaded insert rivet gun, insert the rivets as indicated.</li>
+<li>Using an M3 tap, tap the small center hole.  This is optional and is be used to provide additional security of the din clip to the din rail.</li>
+</ol>
+<p><img alt="din_rail_clip_assembled" src="assemblies/din_rail_clip_assembled_tn.png" /></p>
+<div style="page-break-after: always;"></div>
+
+<p><a name="back_spin_plate_assembly"></a></p>
+<h2>4 x Back Spin Plate Assembly</h2>
+<h3>Vitamins</h3>
+<table>
+<thead>
+<tr>
+<th align="right">Qty</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right">8</td>
+<td align="left">3MM threaded rivet insert</td>
+</tr>
+</tbody>
+</table>
+<h3>3D Printed parts</h3>
+<table>
+<thead>
+<tr>
+<th>4 x back_spin_plate.stl</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img alt="back_spin_plate.stl" src="stls/back_spin_plate.png" /></td>
+</tr>
+</tbody>
+</table>
+<h3>Assembly instructions</h3>
+<p><img alt="back_spin_plate_assembly" src="assemblies/back_spin_plate_assembly_tn.png" /></p>
+<ol>
+<li>3D print 4 each back spin plates. <a href="#PRINT_SETTINGS">See Print Settings</a></li>
+<li>Using a threaded insert rivet gun, insert the rivets as indicated.</li>
+</ol>
+<p><img alt="back_spin_plate_assembled" src="assemblies/back_spin_plate_assembled_tn.png" /></p>
+<div style="page-break-after: always;"></div>
+
+<p><a name="raspberry_pi_mounting_plate_portrait_assembly"></a></p>
+<h2>Raspberry Pi Mounting Plate Portrait Assembly</h2>
+<h3>Vitamins</h3>
+<table>
+<thead>
+<tr>
+<th align="right">Qty</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right">1</td>
+<td align="left">Screw M3 cap x 16mm</td>
+</tr>
+<tr>
+<td align="right">1</td>
+<td align="left">Micro SD card</td>
+</tr>
+<tr>
+<td align="right">4</td>
+<td align="left">3MM threaded rivet insert</td>
+</tr>
+<tr>
+<td align="right">1</td>
+<td align="left">Raspberry Pi 3</td>
+</tr>
+<tr>
+<td align="right">2</td>
+<td align="left">Screw M3 cap x 12mm</td>
+</tr>
+<tr>
+<td align="right">6</td>
+<td align="left">Screw M3 cap x 8mm</td>
+</tr>
+</tbody>
+</table>
+<h3>3D Printed parts</h3>
+<table>
+<thead>
+<tr>
+<th>1 x raspberry_pi_mounting_plate.stl</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img alt="raspberry_pi_mounting_plate.stl" src="stls/raspberry_pi_mounting_plate.png" /></td>
+</tr>
+</tbody>
+</table>
+<h3>Sub-assemblies</h3>
+<table>
+<thead>
+<tr>
+<th>1 x back_spin_plate_assembly</th>
+<th>1 x din_rail_clip_assembly</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img alt="back_spin_plate_assembled" src="assemblies/back_spin_plate_assembled_tn.png" /></td>
+<td><img alt="din_rail_clip_assembled" src="assemblies/din_rail_clip_assembled_tn.png" /></td>
+</tr>
+</tbody>
+</table>
+<h3>Assembly instructions</h3>
+<p><img alt="raspberry_pi_mounting_plate_portrait_assembly" src="assemblies/raspberry_pi_mounting_plate_portrait_assembly_tn.png" /></p>
+<ol>
+<li>3D print 1 each raspberry pi mounting plate. <a href="#PRINT_SETTINGS">See Print Settings</a></li>
+<li>Using a threaded insert rivet gun, insert the 4 rivets as indicated.</li>
+<li>Attach Raspberry PI, backspin plate assy, and din rail clip assy together with screws.</li>
+<li>4 8MM screws secure the Raspberry pi to the mounting plate.</li>
+<li>2 8MM screw secure the raspbery pi mounting plate to the spin plate.</li>
+<li>2 12MM screws secure the spin plate to the din rail clip.</li>
+<li>1 16MM screw is optional and is used for additional security of the din rail clip to the din rail.</li>
+</ol>
+<p><img alt="raspberry_pi_mounting_plate_portrait_assembled" src="assemblies/raspberry_pi_mounting_plate_portrait_assembled_tn.png" /></p>
+<div style="page-break-after: always;"></div>
+
+<p><a name="arduino_uno_mounting_plate_portrait_assembly"></a></p>
+<h2>Arduino Uno Mounting Plate Portrait Assembly</h2>
+<h3>Vitamins</h3>
+<table>
+<thead>
+<tr>
+<th align="right">Qty</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right">1</td>
+<td align="left">Screw M3 cap x 16mm</td>
+</tr>
+<tr>
+<td align="right">2</td>
+<td align="left">Screw M3 cap x 12mm</td>
+</tr>
+<tr>
+<td align="right">4</td>
+<td align="left">3MM threaded rivet insert</td>
+</tr>
+<tr>
+<td align="right">1</td>
+<td align="left">Arduino Uno R3</td>
+</tr>
+<tr>
+<td align="right">6</td>
+<td align="left">Screw M3 cap x 8mm</td>
+</tr>
+</tbody>
+</table>
+<h3>3D Printed parts</h3>
+<table>
+<thead>
+<tr>
+<th>1 x arduino_uno_mounting_plate.stl</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img alt="arduino_uno_mounting_plate.stl" src="stls/arduino_uno_mounting_plate.png" /></td>
+</tr>
+</tbody>
+</table>
+<h3>Sub-assemblies</h3>
+<table>
+<thead>
+<tr>
+<th>1 x back_spin_plate_assembly</th>
+<th>1 x din_rail_clip_assembly</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img alt="back_spin_plate_assembled" src="assemblies/back_spin_plate_assembled_tn.png" /></td>
+<td><img alt="din_rail_clip_assembled" src="assemblies/din_rail_clip_assembled_tn.png" /></td>
+</tr>
+</tbody>
+</table>
+<h3>Assembly instructions</h3>
+<p><img alt="arduino_uno_mounting_plate_portrait_assembly" src="assemblies/arduino_uno_mounting_plate_portrait_assembly_tn.png" /></p>
+<ol>
+<li>3D print 1 each Arduino Uno mounting plate. <a href="#PRINT_SETTINGS">See Print Settings</a></li>
+<li>Using a threaded insert rivet gun, insert the 4 rivets as indicated.</li>
+<li>Attach Arduino Uno, backspin plate assy, and din rail clip assy together with screws.</li>
+<li>4 8MM screws secure the Arduino Uno to the mounting plate.</li>
+<li>2 8MM screw secure the Arduino Uno mounting plate to the spin plate.</li>
+<li>2 12MM screws secure the spin plate to the din rail clip.</li>
+<li>1 16MM screw is optional and is used for additional security of the din rail clip to the din rail.</li>
+</ol>
+<p><img alt="arduino_uno_mounting_plate_portrait_assembled" src="assemblies/arduino_uno_mounting_plate_portrait_assembled_tn.png" /></p>
+<div style="page-break-after: always;"></div>
+
+<p><a name="small_breadboard_portrait_assembly"></a></p>
+<h2>Small Breadboard Portrait Assembly</h2>
+<h3>Vitamins</h3>
+<table>
+<thead>
+<tr>
+<th align="right">Qty</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right">1</td>
+<td align="left">Screw M3 cap x 16mm</td>
+</tr>
+<tr>
+<td align="right">1</td>
+<td align="left">Small Breadboard</td>
+</tr>
+<tr>
+<td align="right">1</td>
+<td align="left">Screw M3 cap x 5mm</td>
+</tr>
+<tr>
+<td align="right">2</td>
+<td align="left">Screw M3 cap x 12mm</td>
+</tr>
+<tr>
+<td align="right">2</td>
+<td align="left">Screw M3 cap x 8mm</td>
+</tr>
+</tbody>
+</table>
+<h3>3D Printed parts</h3>
+<table>
+<thead>
+<tr>
+<th>1 x small_breadboard_holder.stl</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img alt="small_breadboard_holder.stl" src="stls/small_breadboard_holder.png" /></td>
+</tr>
+</tbody>
+</table>
+<h3>Sub-assemblies</h3>
+<table>
+<thead>
+<tr>
+<th>1 x back_spin_plate_assembly</th>
+<th>1 x din_rail_clip_assembly</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img alt="back_spin_plate_assembled" src="assemblies/back_spin_plate_assembled_tn.png" /></td>
+<td><img alt="din_rail_clip_assembled" src="assemblies/din_rail_clip_assembled_tn.png" /></td>
+</tr>
+</tbody>
+</table>
+<h3>Assembly instructions</h3>
+<p><img alt="small_breadboard_portrait_assembly" src="assemblies/small_breadboard_portrait_assembly_tn.png" /></p>
+<ol>
+<li>3D print 1 each small breadboard holder. <a href="#PRINT_SETTINGS">See Print Settings</a></li>
+<li>Using a 3mm tap, tap the small horizontal hole located on the side of the breadboard holder.</li>
+<li>1 5MM screw secures the breadboard to the holder from the side.</li>
+<li>2 8MM screws secure the breadboard holder to the spin plate.</li>
+<li>2 12MM screws secure the spin plate to the din rail clip.</li>
+<li>1 16MM screw is optional and is used for additional security of the din rail clip to the din rail.</li>
+</ol>
+<p><img alt="small_breadboard_portrait_assembled" src="assemblies/small_breadboard_portrait_assembled_tn.png" /></p>
+<div style="page-break-after: always;"></div>
+
+<p><a name="small_breadboard_landscape_assembly"></a></p>
+<h2>Small Breadboard Landscape Assembly</h2>
+<h3>Vitamins</h3>
+<table>
+<thead>
+<tr>
+<th align="right">Qty</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right">1</td>
+<td align="left">Screw M3 cap x 16mm</td>
+</tr>
+<tr>
+<td align="right">1</td>
+<td align="left">Small Breadboard</td>
+</tr>
+<tr>
+<td align="right">1</td>
+<td align="left">Screw M3 cap x 5mm</td>
+</tr>
+<tr>
+<td align="right">2</td>
+<td align="left">Screw M3 cap x 12mm</td>
+</tr>
+<tr>
+<td align="right">2</td>
+<td align="left">Screw M3 cap x 8mm</td>
+</tr>
+</tbody>
+</table>
+<h3>3D Printed parts</h3>
+<table>
+<thead>
+<tr>
+<th>1 x small_breadboard_holder.stl</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img alt="small_breadboard_holder.stl" src="stls/small_breadboard_holder.png" /></td>
+</tr>
+</tbody>
+</table>
+<h3>Sub-assemblies</h3>
+<table>
+<thead>
+<tr>
+<th>1 x back_spin_plate_assembly</th>
+<th>1 x din_rail_clip_assembly</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img alt="back_spin_plate_assembled" src="assemblies/back_spin_plate_assembled_tn.png" /></td>
+<td><img alt="din_rail_clip_assembled" src="assemblies/din_rail_clip_assembled_tn.png" /></td>
+</tr>
+</tbody>
+</table>
+<h3>Assembly instructions</h3>
+<p><img alt="small_breadboard_landscape_assembly" src="assemblies/small_breadboard_landscape_assembly_tn.png" /></p>
+<ol>
+<li>3D print 1 each small breadboard holder. <a href="#PRINT_SETTINGS">See Print Settings</a></li>
+<li>Using a 3mm tap, tap the small horizontal hole located on the side of the breadboard holder.</li>
+<li>1 5MM screw secures the breadboard to the holder from the side.</li>
+<li>2 8MM screws secure the breadboard holder to the spin plate.</li>
+<li>2 12MM screws secure the spin plate to the din rail clip.</li>
+<li>1 16MM screw is optional and is used for additional security of the din rail clip to the din rail.</li>
+</ol>
+<p><img alt="small_breadboard_landscape_assembled" src="assemblies/small_breadboard_landscape_assembled_tn.png" /></p>
+<div style="page-break-after: always;"></div>
+
+<p><a name="carry_handle_assembly"></a></p>
+<h2>Carry Handle Assembly</h2>
+<h3>Vitamins</h3>
+<table>
+<thead>
+<tr>
+<th align="right">Qty</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right">2</td>
+<td align="left">Screw M3 cap x 16mm</td>
+</tr>
+<tr>
+<td align="right">2</td>
+<td align="left">Washer  M3 x 7mm x 0.5mm</td>
+</tr>
+</tbody>
+</table>
+<h3>3D Printed parts</h3>
+<table>
+<thead>
+<tr>
+<th>1 x carry_handle.stl</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img alt="carry_handle.stl" src="stls/carry_handle.png" /></td>
+</tr>
+</tbody>
+</table>
+<h3>Assembly instructions</h3>
+<p><img alt="carry_handle_assembly" src="assemblies/carry_handle_assembly.png" /></p>
+<ol>
+<li>3D print 1 each carry handle. <a href="#PRINT_SETTINGS">See Print Settings</a></li>
+<li>Insert 2 each 16MM M3 screws into 2 each M3 washers.</li>
+<li>Once frame assembly is assembled, attach carry hadndle to top of frame as indicated.  </li>
+</ol>
+<p><img alt="carry_handle_assembled" src="assemblies/carry_handle_assembled.png" /></p>
+<div style="page-break-after: always;"></div>
+
+<p><a name="din_rail_assembly"></a></p>
+<h2>Din Rail Assembly</h2>
+<h3>Vitamins</h3>
+<table>
+<thead>
+<tr>
+<th align="right">Qty</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right">14</td>
+<td align="left">Screw M3 cap x 8mm</td>
+</tr>
+<tr>
+<td align="right">7</td>
+<td align="left">35MM Din Rail 200 MM long</td>
+</tr>
+<tr>
+<td align="right">14</td>
+<td align="left">Washer  M3 x 7mm x 0.5mm</td>
+</tr>
+</tbody>
+</table>
+<h3>Assembly instructions</h3>
+<p><img alt="din_rail_assembly" src="assemblies/din_rail_assembly_tn.png" /></p>
+<ol>
+<li>Use M3 8MM screws and M3 washers to attach the din rail to the outer frame assembly.  </li>
+<li>Position the din rail in any position which works best for your project need. </li>
+</ol>
+<p><img alt="din_rail_assembled" src="assemblies/din_rail_assembled_tn.png" /></p>
+<div style="page-break-after: always;"></div>
+
+<p><a name="corner_tube_top_assembly"></a></p>
+<h2>4 x Corner Tube Top Assembly</h2>
+<h3>Vitamins</h3>
+<table>
+<thead>
+<tr>
+<th align="right">Qty</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right">4</td>
+<td align="left">3MM threaded rivet insert</td>
+</tr>
+</tbody>
+</table>
+<h3>Assembly instructions</h3>
+<p><img alt="corner_tube_top_assembly" src="assemblies/corner_tube_top_assembly_tn.png" /></p>
+<ol>
+<li>3D print 4 each corner tube connector tops . <a href="#PRINT_SETTINGS">See Print Settings</a></li>
+<li>Using a threaded insert rivet gun, insert the rivets as indicated.</li>
+</ol>
+<p><img alt="corner_tube_top_assembled" src="assemblies/corner_tube_top_assembled_tn.png" /></p>
+<div style="page-break-after: always;"></div>
+
+<p><a name="frame_bottom_assembly"></a></p>
+<h2>Frame Bottom Assembly</h2>
+<h3>Vitamins</h3>
+<table>
+<thead>
+<tr>
+<th align="right">Qty</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right">4</td>
+<td align="left">1IN Aluminum Square Tube 149.2 MM long</td>
+</tr>
+<tr>
+<td align="right">20</td>
+<td align="left">3MM threaded rivet insert</td>
+</tr>
+</tbody>
+</table>
+<h3>Assembly instructions</h3>
+<p><img alt="frame_bottom_assembly" src="assemblies/frame_bottom_assembly_tn.png" /></p>
+<ol>
+<li>Using a drill and a 5MM drill bit. Drill 5 each holes in each of the 4 rails (20 total). Drill pattern is below.  </li>
+<li>Insert rivets using rivet gun.  Do NOT insert the end rivets until the corner connectors are installed. 
+<img alt="Picture" src="./docs/dimensioned_bottom_rail.png" /> <br></li>
+</ol>
+<p><img alt="frame_bottom_assembled" src="assemblies/frame_bottom_assembled_tn.png" /></p>
+<div style="page-break-after: always;"></div>
+
+<p><a name="frame_middle_assembly"></a></p>
+<h2>Frame Middle Assembly</h2>
+<h3>Vitamins</h3>
+<table>
+<thead>
+<tr>
+<th align="right">Qty</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right">4</td>
+<td align="left">1IN Aluminum Square Tube 149.2 MM long</td>
+</tr>
+<tr>
+<td align="right">40</td>
+<td align="left">3MM threaded rivet insert</td>
+</tr>
+</tbody>
+</table>
+<h3>Assembly instructions</h3>
+<p><img alt="frame_middle_assembly" src="assemblies/frame_middle_assembly_tn.png" /></p>
+<ol>
+<li>Using a drill and a 5MM drill bit. Drill 10 each holes in each of the 4 rails (40 total). Drill pattern is below.  </li>
+<li>Insert rivets using rivet gun.  Do NOT insert the end rivets until the corner connectors are installed. 
+<img alt="Picture" src="./docs/dimensioned_vertical_rail.png" /> <br></li>
+</ol>
+<p><img alt="frame_middle_assembled" src="assemblies/frame_middle_assembled_tn.png" /></p>
+<div style="page-break-after: always;"></div>
+
+<p><a name="frame_top_assembly"></a></p>
+<h2>Frame Top Assembly</h2>
+<h3>Vitamins</h3>
+<table>
+<thead>
+<tr>
+<th align="right">Qty</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right">4</td>
+<td align="left">1IN Aluminum Square Tube 149.2 MM long</td>
+</tr>
+<tr>
+<td align="right">40</td>
+<td align="left">3MM threaded rivet insert</td>
+</tr>
+</tbody>
+</table>
+<h3>Assembly instructions</h3>
+<p><img alt="frame_top_assembly" src="assemblies/frame_top_assembly_tn.png" /></p>
+<ol>
+<li>Using a drill and a 5MM drill bit. Drill 10 each holes in each of the 4 rails (40 total). Drill pattern is below.  </li>
+<li>Insert rivets using rivet gun.  Do NOT insert the end rivets until the corner connectors are installed. 
+<img alt="Picture" src="./docs/dimensioned_top_rail.png" /> <br></li>
+</ol>
+<p><img alt="frame_top_assembled" src="assemblies/frame_top_assembled_tn.png" /></p>
+<div style="page-break-after: always;"></div>
+
+<p><a name="frame_assembly"></a></p>
+<h2>Frame Assembly</h2>
+<h3>3D Printed parts</h3>
+<table>
+<thead>
+<tr>
+<th>4 x corner_tube_connector_bottom.stl</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img alt="corner_tube_connector_bottom.stl" src="stls/corner_tube_connector_bottom.png" /></td>
+</tr>
+</tbody>
+</table>
+<h3>Sub-assemblies</h3>
+<table>
+<thead>
+<tr>
+<th>4 x corner_tube_top_assembly</th>
+<th>1 x frame_bottom_assembly</th>
+<th>1 x frame_middle_assembly</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img alt="corner_tube_top_assembled" src="assemblies/corner_tube_top_assembled_tn.png" /></td>
+<td><img alt="frame_bottom_assembled" src="assemblies/frame_bottom_assembled_tn.png" /></td>
+<td><img alt="frame_middle_assembled" src="assemblies/frame_middle_assembled_tn.png" /></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>1 x frame_top_assembly</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img alt="frame_top_assembled" src="assemblies/frame_top_assembled_tn.png" /></td>
+</tr>
+</tbody>
+</table>
+<h3>Assembly instructions</h3>
+<p><img alt="frame_assembly" src="assemblies/frame_assembly_tn.png" /></p>
+<p><img alt="frame_assembled" src="assemblies/frame_assembled_tn.png" /></p>
+<div style="page-break-after: always;"></div>
+
+<p><a name="helping_hands_assembly"></a></p>
+<h2>Helping Hands Assembly</h2>
+<h3>Vitamins</h3>
+<table>
+<thead>
+<tr>
+<th align="right">Qty</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right">2</td>
+<td align="left">3MM Armature wire - 5 inches long</td>
+</tr>
+<tr>
+<td align="right">2</td>
+<td align="left">Alligator Clip</td>
+</tr>
+<tr>
+<td align="right">1</td>
+<td align="left">Screw M3 cap x 16mm</td>
+</tr>
+<tr>
+<td align="right">2</td>
+<td align="left">Screw M3 cap x 12mm</td>
+</tr>
+<tr>
+<td align="right">6</td>
+<td align="left">Screw M3 cap x 8mm</td>
+</tr>
+</tbody>
+</table>
+<h3>3D Printed parts</h3>
+<table>
+<thead>
+<tr>
+<th>2 x armature_union.stl</th>
+<th>1 x din_rail_clip.stl</th>
+<th>1 x helping_hands_mount.stl</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img alt="armature_union.stl" src="stls/armature_union.png" /></td>
+<td><img alt="din_rail_clip.stl" src="stls/din_rail_clip.png" /></td>
+<td><img alt="helping_hands_mount.stl" src="stls/helping_hands_mount.png" /></td>
+</tr>
+</tbody>
+</table>
+<h3>Assembly instructions</h3>
+<p><img alt="helping_hands_assembly" src="assemblies/helping_hands_assembly_tn.png" /></p>
+<ol>
+<li>3D print 2 each armature union, din rail clip, and helping hands mount <a href="#PRINT_SETTINGS">See Print Settings</a></li>
+<li>Using a 3MM tap, tap the 4 holes of the armature unions.  </li>
+<li>Using a 3MM tap, tap the 2 holes located on the face of the helping hands mount. </li>
+<li>Cut 2 each 5 inch sections of the 3MM armature wire.</li>
+<li>insert one side of the armature wire into the armature union and an alligator clip into the other end of the armature union and secure with the 8MM screws. </li>
+<li>Insert the other end of the 3MM armature wire into the helping hands mount and secure with a 8MM M3 screw.</li>
+<li>Use the 2 12MM M3 screws to secure the helping hands mount to the din rail clip. </li>
+</ol>
+<p><img alt="helping_hands_assembled" src="assemblies/helping_hands_assembled_tn.png" /></p>
+<div style="page-break-after: always;"></div>
+
+<p><a name="main_assembly"></a></p>
+<h2>Main Assembly</h2>
+<h3>Vitamins</h3>
+<table>
+<thead>
+<tr>
+<th align="right">Qty</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right">2</td>
+<td align="left">3M Dual lock velcro 149mm long</td>
+</tr>
+<tr>
+<td align="right">1</td>
+<td align="left">Magnifier Lamp Assembly</td>
+</tr>
+<tr>
+<td align="right">2</td>
+<td align="left">3M Dual lock velcro 6mm long</td>
+</tr>
+<tr>
+<td align="right">4</td>
+<td align="left">1 inch sq rubber foot</td>
+</tr>
+</tbody>
+</table>
+<h3>Sub-assemblies</h3>
+<table>
+<thead>
+<tr>
+<th>1 x arduino_uno_mounting_plate_portrait_assembly</th>
+<th>1 x carry_handle_assembly</th>
+<th>4 x corner_lamp_holder_assembly</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img alt="arduino_uno_mounting_plate_portrait_assembled" src="assemblies/arduino_uno_mounting_plate_portrait_assembled_tn.png" /></td>
+<td><img alt="carry_handle_assembled" src="assemblies/carry_handle_assembled_tn.png" /></td>
+<td><img alt="corner_lamp_holder_assembled" src="assemblies/corner_lamp_holder_assembled_tn.png" /></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>1 x din_rail_assembly</th>
+<th>1 x frame_assembly</th>
+<th>1 x helping_hands_assembly</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img alt="din_rail_assembled" src="assemblies/din_rail_assembled_tn.png" /></td>
+<td><img alt="frame_assembled" src="assemblies/frame_assembled_tn.png" /></td>
+<td><img alt="helping_hands_assembled" src="assemblies/helping_hands_assembled_tn.png" /></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>1 x power_strip_assembly</th>
+<th>1 x prop_assembly</th>
+<th>1 x raspberry_pi_mounting_plate_portrait_assembly</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img alt="power_strip_assembled" src="assemblies/power_strip_assembled_tn.png" /></td>
+<td><img alt="prop_assembled" src="assemblies/prop_assembled_tn.png" /></td>
+<td><img alt="raspberry_pi_mounting_plate_portrait_assembled" src="assemblies/raspberry_pi_mounting_plate_portrait_assembled_tn.png" /></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>1 x small_breadboard_landscape_assembly</th>
+<th>1 x small_breadboard_portrait_assembly</th>
+<th>1 x tray_assembly</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img alt="small_breadboard_landscape_assembled" src="assemblies/small_breadboard_landscape_assembled_tn.png" /></td>
+<td><img alt="small_breadboard_portrait_assembled" src="assemblies/small_breadboard_portrait_assembled_tn.png" /></td>
+<td><img alt="tray_assembled" src="assemblies/tray_assembled_tn.png" /></td>
+</tr>
+</tbody>
+</table>
+<h3>Assembly instructions</h3>
+<p><img alt="main_assembly" src="assemblies/main_assembly.png" /></p>
+<ol>
+<li>Cut 2 each 149mm sections of dual lock velcro.</li>
+<li>Remove dual lock backing and stick to the front and back inner bottom frame assembly. The power supply will stick to these velcro strips. </li>
+<li>Attach 4 each rubber feet to the bottom 4 corners of the cube.</li>
+<li>Cut 2 each 6mm sections of dual lock velcro.</li>
+<li>Attach these small strips of velcro to the left inner frame where the prop will go when it is stored inside the cube. </li>
+<li>Insert LED magnifying lamp into one of the 4 corner posts.</li>
+<li>Attach all other assemblies as indicated.</li>
+</ol>
+<p><img alt="main_assembled" src="assemblies/main_assembled.png" /></p>
+<div style="page-break-after: always;"></div>

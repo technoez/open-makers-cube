@@ -1,0 +1,12 @@
+helping_hands_assembly:
+Vitamins:
+  2 Alligator Clip
+  2 3MM Armature wire - 5 inches long
+  2 Screw M3 cap x 12mm
+  1 Screw M3 cap x 16mm
+  6 Screw M3 cap x 8mm
+
+Printed:
+  2 armature_union.stl
+  1 din_rail_clip.stl
+  1 helping_hands_mount.stl
